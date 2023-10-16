@@ -26,8 +26,8 @@ class Email {
         $mail->Username = $_ENV["EMAIL_USER"];
         $mail->Password = $_ENV["EMAIL_PASS"];
 
-        $mail->setFrom('uptask@corre.com');
-        $mail->addAddress('uptask@corre.com', 'Uptask.com');  
+        $mail->setFrom('slv3490@gmail.com', "Uptask");
+        $mail->addAddress($this->email);
         $mail->Subject = 'Confirma tu Cuenta';
         //Set HTML
         $mail->isHTML(true);
@@ -54,8 +54,8 @@ class Email {
         $mail->Username = $_ENV["EMAIL_USER"];
         $mail->Password = $_ENV["EMAIL_PASS"];
 
-        $mail->setFrom('uptask@corre.com');
-        $mail->addAddress('uptask@corre.com', 'Uptask.com');  
+        $mail->setFrom('slv3490@gmail.com', "Uptask");
+        $mail->addAddress($this->email); 
         $mail->Subject = 'Reestablece tu password';
         //Set HTML
         $mail->isHTML(true);
