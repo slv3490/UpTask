@@ -1,0 +1,85 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.sidebar {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    background-color: v.$indigo;
+
+    &.mostrar {
+        padding: 2rem;
+        opacity: 1;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0 0 0 / 90%);
+        a {
+            font-size: 2.4rem;
+            text-align: center;
+        }
+        @include m.tablet {
+            display: none;
+        }
+    }
+    &.ocultar {
+        opacity: 0;
+    }
+    @include m.tablet {
+        height: 100%;
+        opacity: 1;
+        padding: 2rem;
+    }
+    
+    .sidebar-nav {
+        margin-top: 5rem;
+
+        a {
+            color: v.$blanco;
+            display: block;
+            margin-bottom: 2rem;
+            padding: .7rem;
+            &:hover, &.activo {
+                background-color: darken(v.$indigo, 20%);
+                border-radius: .5rem;
+                transition: background-color 400ms;
+
+            }
+            @include m.tablet {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    .contenedor-sidebar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            color: v.$blanco;
+            margin: 0;
+            text-align: center;
+        }
+        .cerrar-menu {
+            width: 2rem;
+            cursor: pointer;
+            @include m.tablet {
+                display: none;
+            }
+        }
+    }
+    .cerrar-sesion-mobile {
+        margin-top: 10rem;
+        .cerrar-sesion {
+            @include m.boton (v.$indigo, v.$blanco);
+            @include m.tablet {
+                display: none;
+            }
+        }
+    }
+} 

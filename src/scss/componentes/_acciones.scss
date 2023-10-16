@@ -1,0 +1,14 @@
+@use "base/mixins" as m;
+
+.acciones {
+    a {
+        display: block;
+        margin-top: 2rem;
+        text-align: center;
+        color: black;
+    }
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,82 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+@media (prefers-color-scheme: dark) {
+    $grisOscuro: #2c2c3b;
+
+    body {
+        background-color: $grisOscuro;
+    }
+
+    .tagline, 
+    .formulario label,
+    li.no-tareas,
+    #swal2-html-container,
+    .confirmar .acciones a{
+        color: v.$blanco;
+    }
+    .descripcion-pagina,
+    .formulario .campo input,
+    .nombre-pagina {
+        color: v.$grisClaro;
+    }
+    .formulario .campo input {
+        background-color: lighten($grisOscuro, 15%);
+    }
+    .alertas.error {
+        background-color: v.$blanco
+    }
+    .dashboard {
+        background-color: $grisOscuro;
+    }
+    .filtros {
+        background-color: lighten($grisOscuro, 10%);
+        h2,
+        label {
+            color: v.$blanco;
+        }
+    }
+    .listado-tareas .tarea, .barra {
+        background-color: lighten($grisOscuro, 10%);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: none;
+        p {
+            color: v.$blanco;
+        }
+    }
+    .barra p {
+        span {
+            color: v.$blanco;
+            border-bottom: 1px solid darken(v.$indigo, 20%);
+        }
+    }
+    .sidebar, .barra-mobile {
+        background-color: darken(v.$indigo, 20%);
+    }
+    .sidebar .sidebar-nav a {
+        &.activo, 
+        &:hover {
+            background-color: lighten(v.$indigo, 5%);
+        }
+    }
+    .modal .formulario {
+        background-color: $grisOscuro;
+        legend {
+            color: v.$blanco;
+        }
+    }
+    .dashboard .enlace {
+        color: v.$blanco;
+        &:hover {
+            color: darken(v.$blanco, 20%);
+        }
+    }
+    .swal2-popup{
+        background-color: lighten($grisOscuro, 10%);
+    }
+    .swal2-title {
+        color: v.$grisClaro;
+    }
+    
+}
